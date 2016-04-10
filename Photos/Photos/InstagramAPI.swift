@@ -24,17 +24,49 @@ class InstagramAPI {
          */
         // FILL ME IN
         var url: NSURL
+        
+        url = Utils.getPopularURL()
 
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             if error == nil {
                 //FIX ME
                 var photos: [Photo]!
+                photos = [Photo]()
                 do {
                     let feedDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
                     // FILL ME IN, REMEMBER TO USE FORCED DOWNCASTING
+                    var arrDictionaries: [NSDictionary] = []
                     
+                    var likes: Int?
+                    var username: String?
+                    var imageURL: String?
                     
+                    likes = 0
+                    username = ""
+                    imageURL = ""
+                    
+                    let dataArray = feedDictionary["data"] as! NSArray
+                    if let data = feedDictionary["data"] as? [String: AnyObject] {
+                        for _ in dataArray {
+                            if let like = feedDictionary["likes"] as? [String: AnyObject] {
+                                likes = like["count"] as? Int
+                            }
+                            if let user = feedDictionary["user"] as? [String: AnyObject] {
+                                username = user["username"] as? String
+                            }
+                            if let images = feedDictionary["images"] as? [String: AnyObject] {
+                                let tempURL = images["standard_resolution"]
+                                imageURL = tempURL!["url"] as? String
+                            }
+                            let newDictionary: NSDictionary = ["likes" : likes!, "user" : username!, "images" : imageURL!]
+                                arrDictionaries.append(newDictionary)
+                        }
+                        for item in arrDictionaries {
+                            let foto = Photo(data: item)
+                            photos.append(foto)
+                        }
+                    }
                     // DO NOT CHANGE BELOW
                     let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
                     dispatch_async(dispatch_get_global_queue(priority, 0)) {

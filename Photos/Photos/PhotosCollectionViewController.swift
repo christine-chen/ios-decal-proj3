@@ -9,6 +9,8 @@
 import UIKit
 
 class PhotosCollectionViewController: UICollectionViewController {
+    
+    @IBOutlet var collectionViewOutlet: UICollectionView!
     var photos: [Photo]!
     
     override func viewDidLoad() {
@@ -35,6 +37,14 @@ class PhotosCollectionViewController: UICollectionViewController {
         self.photos = photos
         self.collectionView!.reloadData()
     }
+    
+//    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        
+//    }
+//    
+//    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+//        let cell = collectionViewOutlet.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
+//    }
     
 }
 
