@@ -17,6 +17,8 @@
 		3A1683A91BE9C5A7009F39C5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1683A81BE9C5A7009F39C5 /* Photo.swift */; };
 		4592FC401CB9AF1800617F6D /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4592FC3F1CB9AF1800617F6D /* CollectionViewCell.swift */; };
 		4592FC421CB9AF4700617F6D /* ShowImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4592FC411CB9AF4700617F6D /* ShowImageViewController.swift */; };
+		45C459701CBDE49B0057B3BD /* instagram-heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C4596E1CBDE49B0057B3BD /* instagram-heart.png */; };
+		45C459711CBDE49B0057B3BD /* red_heart-32694f7108379cc6062fb263b82772ec.png in Resources */ = {isa = PBXBuildFile; fileRef = 45C4596F1CBDE49B0057B3BD /* red_heart-32694f7108379cc6062fb263b82772ec.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		3A1683A81BE9C5A7009F39C5 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		4592FC3F1CB9AF1800617F6D /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		4592FC411CB9AF4700617F6D /* ShowImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowImageViewController.swift; sourceTree = "<group>"; };
+		45C4596E1CBDE49B0057B3BD /* instagram-heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "instagram-heart.png"; path = "Assets.xcassets/instagram-heart.png"; sourceTree = "<group>"; };
+		45C4596F1CBDE49B0057B3BD /* red_heart-32694f7108379cc6062fb263b82772ec.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "red_heart-32694f7108379cc6062fb263b82772ec.png"; path = "Assets.xcassets/red_heart-32694f7108379cc6062fb263b82772ec.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				3A16838F1BE9B642009F39C5 /* AppDelegate.swift */,
 				3A1683931BE9B642009F39C5 /* Main.storyboard */,
 				3A1683961BE9B642009F39C5 /* Assets.xcassets */,
+				45C4596E1CBDE49B0057B3BD /* instagram-heart.png */,
+				45C4596F1CBDE49B0057B3BD /* red_heart-32694f7108379cc6062fb263b82772ec.png */,
 				3A1683981BE9B642009F39C5 /* LaunchScreen.storyboard */,
 				3A16839B1BE9B642009F39C5 /* Info.plist */,
 			);
@@ -161,7 +167,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C459711CBDE49B0057B3BD /* red_heart-32694f7108379cc6062fb263b82772ec.png in Resources */,
 				3A16839A1BE9B642009F39C5 /* LaunchScreen.storyboard in Resources */,
+				45C459701CBDE49B0057B3BD /* instagram-heart.png in Resources */,
 				3A1683971BE9B642009F39C5 /* Assets.xcassets in Resources */,
 				3A1683951BE9B642009F39C5 /* Main.storyboard in Resources */,
 			);

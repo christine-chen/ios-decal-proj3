@@ -41,32 +41,39 @@ class InstagramAPI {
                     var likes: Int?
                     var username: String?
                     var imageURL: String?
+                    var datePost: NSDate?
                     
                     likes = 0
                     username = ""
                     imageURL = ""
+                    datePost = NSDate()
                     
                     let dataArray = feedDictionary["data"] as! NSArray
-                    if let data = feedDictionary["data"] as? [String: AnyObject] {
-                        for _ in dataArray {
-                            if let like = feedDictionary["likes"] as? [String: AnyObject] {
-                                likes = like["count"] as? Int
-                            }
-                            if let user = feedDictionary["user"] as? [String: AnyObject] {
-                                username = user["username"] as? String
-                            }
-                            if let images = feedDictionary["images"] as? [String: AnyObject] {
-                                let tempURL = images["standard_resolution"]
-                                imageURL = tempURL!["url"] as? String
-                            }
-                            let newDictionary: NSDictionary = ["likes" : likes!, "user" : username!, "images" : imageURL!]
-                                arrDictionaries.append(newDictionary)
+//                    print("data")
+                    for dada in dataArray {
+                        if let like = dada["likes"] as? [String: AnyObject] {
+                            likes = like["count"] as? Int
                         }
-                        for item in arrDictionaries {
-                            let foto = Photo(data: item)
-                            photos.append(foto)
+                        if let user = dada["user"] as? [String: AnyObject] {
+                            username = user["username"] as? String
                         }
+                        if let images = dada["images"] as? [String: AnyObject] {
+                            let tempURL = images["standard_resolution"]
+                            imageURL = tempURL!["url"] as? String
+                        }
+                        if let date = dada["created_time"] as? String {
+                            datePost = NSDate.init(timeIntervalSince1970: Double(date)!)
+                        }
+                        let newDictionary: NSDictionary = ["likes" : likes!, "username" : username!, "url" : imageURL!, "date" : datePost!]
+                            arrDictionaries.append(newDictionary)
                     }
+//                        print("before loop")
+                    for item in arrDictionaries {
+                        let foto = Photo.init(data: item)
+                        photos.append(foto)
+//                        print(item.valueForKey("url"))
+                    }
+//                    }
                     // DO NOT CHANGE BELOW
                     let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
                     dispatch_async(dispatch_get_global_queue(priority, 0)) {

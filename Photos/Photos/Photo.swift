@@ -15,6 +15,10 @@ class Photo {
     var url : String!
     /* The username of the photographer. */
     var username : String!
+    
+    var datePosted : NSDate!
+    
+    var imageData : NSData?
 
     /* Parses a NSDictionary and creates a photo object. */
     init (data: NSDictionary) {
@@ -23,6 +27,7 @@ class Photo {
         likes = data.valueForKey("likes") as! Int
         url = data.valueForKey("url") as! String
         username = data.valueForKey("username") as! String
+        datePosted = data.valueForKey("date") as! NSDate
     }
 
 }

@@ -15,33 +15,33 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wi1-eT-2m5">
-                            <size key="itemSize" width="125" height="125"/>
+                            <size key="itemSize" width="300" height="300"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="KyR-Ud-VZz" customClass="CollectionViewCell" customModule="Photos" customModuleProvider="target">
-                                <rect key="frame" x="10" y="74" width="125" height="125"/>
+                                <rect key="frame" x="57" y="74" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ngT-S7-Cwk">
-                                            <rect key="frame" x="0.0" y="-1" width="125" height="125"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qms-1z-zrH">
+                                            <rect key="frame" x="-5" y="0.0" width="305" height="300"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ngT-S7-Cwk" secondAttribute="trailing" id="1Bk-2L-jeo"/>
-                                    <constraint firstItem="ngT-S7-Cwk" firstAttribute="top" secondItem="KyR-Ud-VZz" secondAttribute="topMargin" constant="-9" id="DAD-8E-SsR"/>
-                                    <constraint firstItem="ngT-S7-Cwk" firstAttribute="leading" secondItem="KyR-Ud-VZz" secondAttribute="leading" id="phn-Jg-2NX"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="ngT-S7-Cwk" secondAttribute="bottom" constant="-7" id="vf8-kl-nUC"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qms-1z-zrH" secondAttribute="trailing" id="2JR-XC-cF4"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qms-1z-zrH" secondAttribute="bottom" id="RFk-Sb-0Ct"/>
+                                    <constraint firstItem="Qms-1z-zrH" firstAttribute="leading" secondItem="KyR-Ud-VZz" secondAttribute="leadingMargin" constant="-13" id="XO7-uy-Y4j"/>
+                                    <constraint firstItem="Qms-1z-zrH" firstAttribute="top" secondItem="KyR-Ud-VZz" secondAttribute="top" id="qhY-NR-gw9"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="imageView" destination="ngT-S7-Cwk" id="vPY-UX-Yfo"/>
+                                    <outlet property="imageView" destination="Qms-1z-zrH" id="Iox-TF-xF1"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -55,7 +55,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="805" y="387"/>
+            <point key="canvasLocation" x="774" y="387"/>
         </scene>
         <!--Show Image View Controller-->
         <scene sceneID="hZu-6l-LQF">
@@ -75,30 +75,27 @@
                                     <constraint firstAttribute="height" constant="374" id="uwC-97-4ZK"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="883-V4-OPc">
-                                <rect key="frame" x="20" y="95" width="79" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Posted" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZM-bN-wCg">
                                 <rect key="frame" x="300" y="95" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt;3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gip-dS-PIe">
-                                <rect key="frame" x="35" y="514" width="21" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="# likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YF6-Gl-bIL">
                                 <rect key="frame" x="64" y="515" width="49" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="883-V4-OPc">
+                                <rect key="frame" x="20" y="95" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="instagram-heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="ab8-4H-TnB">
+                                <rect key="frame" x="29" y="513" width="25" height="25"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -113,7 +110,10 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="dateLabel" destination="yZM-bN-wCg" id="LlG-X8-7BU"/>
+                        <outlet property="numLikesLabel" destination="YF6-Gl-bIL" id="Yed-01-egw"/>
                         <outlet property="selectedPhoto" destination="BCK-Nj-KU5" id="nkf-zx-Rwm"/>
+                        <outlet property="userLabel" destination="883-V4-OPc" id="S5U-yZ-jN2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfR-BM-0cv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -140,4 +140,7 @@
             <point key="canvasLocation" x="305" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="instagram-heart.png" width="300" height="300"/>
+    </resources>
 </document>
