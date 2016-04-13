@@ -14,6 +14,10 @@ class PhotosCollectionViewController: UICollectionViewController {
     var photos: [Photo]!
     //var dict: NSDictionary = ["likes" : 0, "username" : "", "url" : "", "date" : 0]
 //    var select = Photo.init(data: dict)
+    var selectUser = ""
+    var selectDate = NSDate()
+    var selectImage = UIImage()
+    var selectLikes = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,21 +76,38 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("showImage", sender: self)
-//        select = self.photos[indexPath.row]
 //        let cell = collectionViewOutlet.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CollectionViewCell
-//        loadImageForCell(select, imageView: cell.imageView)
+        let photo = self.photos[indexPath.row]
+            
+//        loadImageForCell(photo, imageView: cell.imageView)
+        let data = NSData(contentsOfURL: NSURL(string: photo.url)!)
+        photo.imageData = data
+        selectImage = UIImage(data: data!)!
+        print(selectImage)
+        collectionView.reloadData()
     }
     
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //Get the new view controller using segue.destinationViewController.
+        //Pass the selected object to the new view controller.
         if segue.identifier == "showImage" {
             let indexPaths = self.collectionView?.indexPathsForSelectedItems()!
-//            let indexPath = indexPaths![0] as NSIndexPath
-//            let show = segue.destinationViewController as? ShowImageViewController
-//            let show?.selectedImage = selected
-//            let show.userLabel =
-//            let show.dateLabel =
-//            let show.numLikesLabel =
+            let indexPath = indexPaths![0] as NSIndexPath
+            let show = segue.destinationViewController as? ShowImageViewController
+            
+            selectUser = self.photos[indexPath.row].username
+            selectDate = self.photos[indexPath.row].datePosted
+            //need to convert to string use formatter
+            selectLikes = self.photos[indexPath.row].likes
+//            print(selectImage.image)
+            show?.name = selectUser
+            show?.pic = selectImage
+            print("show")
+            print(show?.pic)
+            print("pfs")
+//            show?.dateLabel =
+            show?.likes = String(selectLikes)
         }
+//        collectionView?.reloadData()
     }
 }

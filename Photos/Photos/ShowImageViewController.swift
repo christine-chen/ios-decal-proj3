@@ -11,17 +11,22 @@ import UIKit
 class ShowImageViewController: UIViewController {
 
     @IBOutlet var selectedPhoto: UIImageView!
-    
     @IBOutlet var userLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var numLikesLabel: UILabel!
     
-    var image = UIImage()
+    var pic = UIImage()
+    var name = String()
+    var date = String()
+    var likes = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.selectedPhoto.image = self.image
+        userLabel.text = "@" + name
+        selectedPhoto.image = pic
+//        selectedPhoto.loadPhoto()
+        dateLabel.text = date
+        numLikesLabel.text = likes
         // Do any additional setup after loading the view.
     }
 
